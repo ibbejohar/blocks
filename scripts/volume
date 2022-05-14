@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+vol=`pulsemixer --get-volume --max-volume 100 | awk '{print $1}'`
+
+if [ $vol -gt 80 ] 
+then
+echo " :$vol%"
+elif [ $vol -gt 40 ]
+then
+echo "墳:$vol%"
+elif [ $vol -eq 0 ]
+then
+echo ":$vol%"
+elif [ $vol -gt 10 ]||[ $vol -lt 10 ]
+then
+echo ":$vol%"
+else
+echo "00"
+fi
+
