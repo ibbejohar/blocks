@@ -1,3 +1,11 @@
 #!/bin/bash
 
-mpc | awk 'NR==1'
+out=`mpc | awk 'NR==1'`
+str1="volume: n/a   repeat: off   random: off   single: off   consume: off"
+
+if [ "$out" == "$str1" ] 
+then
+	echo ""
+else
+	echo $out
+fi
